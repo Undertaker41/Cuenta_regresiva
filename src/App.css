@@ -1,81 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Instrument+Serif:ital@1&display=swap');
+/* IMPORTACIÓN DE FUENTES PREMIUM */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Plus+Jakarta+Sans:wght@200;400;700&family=Instrument+Serif:ital@1&display=swap');
 
 :root {
-  --purple-main: #b162ff;
-  --purple-dark: #2d0a4e;
-  --purple-glow: rgba(177, 98, 255, 0.4);
-  --glass: rgba(15, 5, 25, 0.7);
+  --morado-prime: #b162ff;
+  --morado-glow: rgba(177, 98, 255, 0.5);
+  --bg-oscura: #0a0118;
+  --papel: #fdfbf7;
+  --texto-carta: #3a2d4a;
 }
 
+/* CONTENEDOR PRINCIPAL */
 .wrapper-principal {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #08020d;
-  /* Fondo estilo Mesh Gradient */
+  background-color: var(--bg-oscura);
+  /* Efecto de luces ambientales */
   background-image: 
-    radial-gradient(at 10% 20%, rgba(76, 0, 255, 0.15) 0px, transparent 50%),
-    radial-gradient(at 90% 80%, rgba(255, 0, 200, 0.1) 0px, transparent 50%);
-  font-family: 'Syne', sans-serif;
+    radial-gradient(circle at 15% 25%, rgba(138, 43, 226, 0.2) 0%, transparent 45%),
+    radial-gradient(at 85% 75%, rgba(255, 0, 200, 0.12) 0%, transparent 45%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  perspective: 1000px;
+  overflow-x: hidden;
   padding: 20px;
-  overflow: hidden;
 }
 
+/* --- ESTILO 1: EL CONTADOR --- */
 .contenedor-cita {
-  position: relative;
-  width: 100%;
-  max-width: 460px;
-  background: var(--glass);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  /* Forma orgánica asimétrica única */
-  border-radius: 60px 20px 60px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(177, 98, 255, 0.25);
+  border-radius: 50px 15px; /* Forma asimétrica experta */
   padding: 60px 40px;
-  border: 1.5px solid rgba(177, 98, 255, 0.2);
+  width: 100%;
+  max-width: 450px;
   text-align: center;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(177, 98, 255, 0.1);
-  animation: float-canvas 6s ease-in-out infinite;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+  animation: entradaSuave 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .titulo-cita {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
-  color: var(--purple-main);
-  margin-bottom: 30px;
-  display: inline-block;
-  border-bottom: 1px solid var(--purple-glow);
-  padding-bottom: 5px;
-}
-
-.dedicatoria {
-  font-size: 1rem;
-  line-height: 1.6;
-  font-weight: 400;
-  color: #d1c4e9;
-  margin-bottom: 35px;
+  letter-spacing: 0.5em;
+  color: var(--morado-prime);
+  margin-bottom: 25px;
   opacity: 0.9;
 }
 
 .subtitulo-cita {
   font-family: 'Instrument Serif', serif;
-  font-style: italic;
-  font-size: 3.8rem;
-  font-weight: 400;
+  font-size: clamp(2.5rem, 8vw, 3.8rem);
   color: #fff;
+  font-style: italic;
   margin-bottom: 40px;
-  line-height: 0.9;
-  /* Efecto de resplandor suave */
-  text-shadow: 0 0 20px var(--purple-glow);
+  line-height: 1;
+  text-shadow: 0 0 25px var(--morado-glow);
 }
 
 .reloj-grid {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
+  justify-content: space-around;
+  gap: 15px;
 }
 
 .unidad-tiempo {
@@ -84,38 +73,121 @@
 
 .numero {
   display: block;
-  font-size: 3.2rem;
-  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 200;
   color: #fff;
-  letter-spacing: -2px;
-  /* Números en degradado morado-blanco */
-  background: linear-gradient(to bottom, #fff, var(--purple-main));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-variant-numeric: tabular-nums;
 }
 
 .etiqueta {
   display: block;
-  font-size: 0.6rem;
-  font-weight: 700;
+  font-size: 0.65rem;
+  font-weight: 600;
   text-transform: uppercase;
-  color: var(--purple-main);
-  margin-top: 5px;
-  opacity: 0.8;
+  color: var(--morado-prime);
+  letter-spacing: 0.2em;
+  margin-top: 8px;
 }
 
-/* Animación de flotación suave */
-@keyframes float-canvas {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(1deg); }
+/* --- ESTILO 2: EL BOTÓN MÁGICO --- */
+.contenedor-boton {
+  text-align: center;
+  animation: entradaSuave 1s ease-out;
 }
 
-/* Estilo para el mensaje final */
-.mensaje-final b {
-  font-family: 'Instrument Serif', serif;
-  font-size: 3rem;
+.boton-magico {
+  background: var(--morado-prime);
   color: #fff;
-  display: block;
-  margin-bottom: 20px;
+  border: none;
+  padding: 22px 45px;
+  font-size: 1.1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 0 15px 35px var(--morado-glow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.boton-magico:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 45px var(--morado-prime);
+  letter-spacing: 1px;
+}
+
+.boton-magico:active {
+  transform: scale(0.96);
+}
+
+/* --- ESTILO 3: LA CARTA FÍSICA --- */
+.carta-abierta {
+  background: var(--papel);
+  padding: 55px 45px;
+  border-radius: 4px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 
+    0 30px 80px rgba(0,0,0,0.8), 
+    inset 0 0 60px rgba(0,0,0,0.02);
+  transform: rotate(-1deg);
+  animation: aparecerCarta 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  border-bottom: 4px solid #d1c4b2;
+}
+
+/* Rayado de papel sutil */
+.carta-abierta::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 100% 32px;
+  pointer-events: none;
+}
+
+.texto-manuscrito {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.75rem;
+  color: var(--texto-carta);
+  line-height: 1.7;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  z-index: 2;
+}
+
+.firma {
+  margin-top: 40px;
+  text-align: right;
+  color: var(--morado-prime);
+  font-size: 2.2rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes entradaSuave {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aparecerCarta {
+  from { 
+    opacity: 0; 
+    transform: scale(0.85) rotate(-4deg) translateY(50px); 
+    filter: blur(15px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) rotate(-1deg) translateY(0); 
+    filter: blur(0); 
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  .contenedor-cita { padding: 40px 20px; }
+  .subtitulo-cita { font-size: 2.5rem; }
+  .carta-abierta { padding: 40px 25px; }
+  .texto-manuscrito { font-size: 1.4rem; }
+}
