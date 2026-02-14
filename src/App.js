@@ -9,7 +9,7 @@ const ContadorSencillo = () => {
     const calcular = () => {
       const ahora = new Date();
       const meta = new Date();
-      meta.setHours(19, 0, 0, 0);
+      meta.setHours(19, 30, 0, 0);
 
       const dif = meta - ahora;
 
@@ -59,7 +59,7 @@ const ContadorSencillo = () => {
           </>
         ) : (
           <div className="mensaje-final">
-            ¡Llegó el momento! ❤️ ✨
+            ¡Llegó el momento!
           </div>
         )}
       </div>
