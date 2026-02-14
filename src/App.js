@@ -40,7 +40,7 @@ const ContadorSencillo = () => {
         {!esHora ? (
           <>
             <p className="titulo-cita">Cuenta regresiva para nuestra cita mi amor</p>
-            <p className="titulo-cita">Gracias por esperar, mi amor. Estoy emocionado de verte a las 7:30 PM. Te amo mucho y no puedo esperar para compartir este momento contigo.</p>
+            <p className="titulo-cita">Gracias por esperar, mi amor. Estoy emocionado de verte a la hora. Te amo mucho y no puedo esperar para compartir este momento contigo.</p>
             <h1 className="subtitulo-cita">Te amoooooo</h1>
             
             <div className="reloj-grid">
@@ -62,7 +62,7 @@ const ContadorSencillo = () => {
           <div className="mensaje-final">
             ¡Llegó el momento!
             Gracias por hacer mi vida mucho mas feliz. Es algo que te agradecere toda mi vida
-                        
+
           </div>
         )}
       </div>
