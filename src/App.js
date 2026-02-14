@@ -9,7 +9,7 @@ const ContadorSencillo = () => {
     const calcular = () => {
       const ahora = new Date();
       const meta = new Date();
-      meta.setHours(19, 30, 0, 0);
+      meta.setHours(19, 30, 0, 0); // Ajusta aquí la hora de tu cita
 
       const dif = meta - ahora;
 
@@ -34,15 +34,21 @@ const ContadorSencillo = () => {
 
   return (
     <div className="wrapper-principal">
-      <div className="decoracion"></div>
-      
       <div className="contenedor-cita">
         {!esHora ? (
           <>
-            <p className="titulo-cita">Cuenta regresiva para nuestra cita mi amor</p>
-            <p className="titulo-cita">Gracias por esperar, mi amor. Estoy emocionado de verte a la hora. Te amo mucho y no puedo esperar para compartir este momento contigo.</p>
-            <h1 className="subtitulo-cita">Te amoooooo</h1>
-            
+            <p className="titulo-cita">feliz San valentin</p>
+                        <h1 className="subtitulo-cita">Te amoooooo</h1>
+            <p className="dedicatoria">
+              Gracias por esperar, y aceptar ser mi cita reina. Estoy emocionado de verte. 
+                Te amo mucho y no puedo esperar para compartir contigo.
+                Ya solo falta:
+
+            </p>
+
+
+
+
             <div className="reloj-grid">
               <div className="unidad-tiempo">
                 <span className="numero">{tiempo.h}</span>
@@ -60,9 +66,11 @@ const ContadorSencillo = () => {
           </>
         ) : (
           <div className="mensaje-final">
-            ¡Llegó el momento!
-            Gracias por hacer mi vida mucho mas feliz. Es algo que te agradecere toda mi vida
-
+            <b>¡El momento es ahora!</b>
+            <p className="dedicatoria">
+              Gracias por hacer mi vida mucho más feliz. 
+              Es algo que te agradeceré toda mi vida.
+            </p>
           </div>
         )}
       </div>
